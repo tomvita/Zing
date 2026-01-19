@@ -155,7 +155,7 @@ void MemoryDump::addData(u8 *buffer, size_t dataSize)
         u8 *cbuffer = new u8[m_data.size() * 9 / 8];
         int csize = LZ_Compress(&m_data[0], cbuffer, m_data.size());
         fwrite(cbuffer, sizeof(u8), csize, m_dumpFile);
-        delete cbuffer;
+        delete[] cbuffer;
       }
       else
         fwrite(buffer, sizeof(u8), dataSize, m_dumpFile);

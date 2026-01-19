@@ -1,6 +1,10 @@
 #pragma once
 
 #include "edizon.h"
+#ifndef PACKED
+#define PACKED __attribute__((packed))
+#endif
+
 
 typedef union {
   u32 color_abgr;
